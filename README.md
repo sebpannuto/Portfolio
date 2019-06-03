@@ -6,7 +6,7 @@ The files in the repository are a collection of coding assignments that I have d
 
 In this folder is my Senior Project. This is a web application that is based around nutrition. It allows users to create an account, search for foods, and then add them to their meal plan. All of their information is stored in an SQL Database and can be accessed at any time. The code was written in JAVA and JSF and the whole application is stored on an EC2 Instance on AWS. 
 
-The application can be accessed here: healthnutritionee.us-east-1.elasticbeanstalk.com
+The application can be accessed here: [healthnutritionee.us-east-1.elasticbeanstalk.com]
 
 **Prog 7**
 
