@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Health and Nutrition Application</title>
+        <h1><b>Welcome #{searchController.unm}</b></h1>
+    </h:head>
+    <h:body style="background-color:lightsalmon;">
+    	<p>
+    	<h:form>
+    		<h:outputLabel for="weight">
+                <h:outputText value="Enter weight in pounds: " />
+            </h:outputLabel>
+            <h:inputText id="weight" value="#{searchController.getUser().weight}" binding="#{inputWeight}"/>
+            
+            <br/>
+            
+            <h:outputLabel for="height">
+                <h:outputText value="Enter height in inches: " />
+            </h:outputLabel>
+            <h:inputText id="height" value="#{searchController.getUser().height}" binding="#{inputHeight}"/>
+            
+            <br/>
+            
+            <h:outputLabel for="BMI">
+                <h:outputText value="BMI: " />
+            </h:outputLabel>
+            <h:inputText id="BMI" value="#{searchController.getUser().BMI}" readonly="true"/>
+            
+            <br/>
+            
+            <h:commandButton value="Update" action="#{searchController.UpdateUserDatabase(inputWeight.value, inputHeight.value)}">
+  			</h:commandButton>
+            
+    	</h:form>
+    	</p>
+    	<p>Look up certain food items in the database: 
+        <a href="search.xhtml">Food Lookup</a>
+        </p>
+        <br/>
+        <p>View meal plans: 
+        <a href="mealPlan.xhtml">Meal Plans</a>
+        </p>
+        <br/>
+        <p>Create meal plan: 
+        <h:form>
+        	<h:outputLabel for="newMealPlan"></h:outputLabel>
+        	<h:inputText id="newMealPlan" value="#{searchController.newMealPlanName}" binding="#{newMealPlan}"/>
+        	<h:commandButton value="Create new Meal Plan" action="#{searchController.createNewMealPlan(newMealPlan.value)}"/>
+        </h:form>
+
+        </p>
+         <p style="color:#FF0000">WARNING if you have a Meal Plan already it will delete your current Meal Plan!</p>
+        <br/>
+        
+        <p>Set Goal values: </p>
+        <h:form>
+        	<h:outputLabel for="protein">
+                <h:outputText value="Protein: " />
+            </h:outputLabel>
+            <h:inputText id="protein" value="#{searchController.getUser().getGoal().goalProtein}"/>
+        <br/>
+        	<h:outputLabel for="calcium">
+                <h:outputText value="Calcium: " />
+            </h:outputLabel>
+            <h:inputText id="calcium" value="#{searchController.getUser().getGoal().goalCalcium}"/>
+        <br/>    
+            <h:outputLabel for="sodium">
+                <h:outputText value="Sodium: " />
+            </h:outputLabel>
+            <h:inputText id="sodium" value="#{searchController.getUser().getGoal().goalSodium}"/>
+        <br/>    
+            <h:outputLabel for="fiber">
+                <h:outputText value="Fiber: " />
+            </h:outputLabel>
+            <h:inputText id="fiber" value="#{searchController.getUser().getGoal().goalFiber}"/>
+        <br/>    
+            <h:outputLabel for="vitaminc">
+                <h:outputText value="VitaminC: " />
+            </h:outputLabel>
+            <h:inputText id="vitaminc" value="#{searchController.getUser().getGoal().goalVitaminc}"/>
+        <br/>    
+            <h:outputLabel for="potassium">
+                <h:outputText value="Potassium: " />
+            </h:outputLabel>
+            <h:inputText id="potassium" value="#{searchController.getUser().getGoal().goalPotassium}"/>
+        <br/>    
+            <h:outputLabel for="carbs">
+                <h:outputText value="Carbs: " />
+            </h:outputLabel>
+            <h:inputText id="carbs" value="#{searchController.getUser().getGoal().goalCarbs}"/>
+        <br/>    
+            <h:outputLabel for="sugars">
+                <h:outputText value="Sugars: " />
+            </h:outputLabel>
+            <h:inputText id="sugars" value="#{searchController.getUser().getGoal().goalSugars}"/>
+        <br/>   
+            <h:outputLabel for="fat">
+                <h:outputText value="Fat: " />
+            </h:outputLabel>
+            <h:inputText id="fat" value="#{searchController.getUser().getGoal().goalFat}"/>
+        <br/>    
+            <h:outputLabel for="waters">
+                <h:outputText value="Waters: " />
+            </h:outputLabel>
+            <h:inputText id="waters" value="#{searchController.getUser().getGoal().goalWater}"/>
+        <br/>    
+            <h:outputLabel for="calories">
+                <h:outputText value="Calories: " />
+            </h:outputLabel>
+            <h:inputText id="calories" value="#{searchController.getUser().getGoal().goalCalories}"/>
+        <br/>   
+            <h:outputLabel for="saturated">
+                <h:outputText value="Saturated: " />
+            </h:outputLabel>
+            <h:inputText id="saturated" value="#{searchController.getUser().getGoal().goalSaturated}"/>
+        <br/>    
+            <h:outputLabel for="mono">
+                <h:outputText value="Monounsaturated: " />
+            </h:outputLabel>
+            <h:inputText id="mono" value="#{searchController.getUser().getGoal().goalMono}"/>
+        <br/>    
+            <h:outputLabel for="poly">
+                <h:outputText value="Polyunsaturated: " />
+            </h:outputLabel>
+            <h:inputText id="poly" value="#{searchController.getUser().getGoal().goalPoly}"/>
+        <br/>    
+            <h:commandButton value="Set Goals" action="#{searchController.sendGoals()}"/>
+            
+        </h:form>
+        
+    </h:body>
+</html>

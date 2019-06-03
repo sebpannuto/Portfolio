@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Results</title>
+        <h1><b>Results</b></h1>
+        <h:outputStylesheet library = "css" name = "styles.css" /> 
+    </h:head>
+    <h:body style="background-color:lightsalmon;">
+    <a href = "userPage.xhtml">Home</a>
+        <h:form>
+            <h:outputLabel for="searchName">
+                <h:outputText value="Enter Name of Food" />
+            </h:outputLabel>
+            <h:inputText id="searchName" value="#{searchController.search}"/>
+                
+            <h:commandButton id="cmdInsert" value="Search" action="#{searchController.executeSearch()}"/>
+        </h:form>
+        <br/>
+		<h:form>
+         <h:dataTable value = "#{searchController.results}" var = "searchc"
+         	styleClass="searchTable"
+          	headerClass="searchTableHeader"
+          	rowClasses="searchTableOddRow,searchTableEvenRow">
+          	
+            <h:column>
+               <f:facet name = "header">Name</f:facet>    				    				
+               #{searchc.name}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Food Group</f:facet>
+               #{searchc.foodGroup}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Protein (g)</f:facet>
+               #{searchc.protein}
+            </h:column>
+            
+            <h:column>
+            	<f:facet name = "header">Calcium (g)</f:facet>
+               #{searchc.calcium}
+            </h:column>
+ 
+            <h:column>
+               <f:facet name = "header">Sodium (g)</f:facet>
+               #{searchc.sodium}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Fiber (g)</f:facet>
+               #{searchc.fiber}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Vitamin C (g)</f:facet>
+               #{searchc.vitaminC}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Potassium (g)</f:facet>
+               #{searchc.potassium}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Carbohydrates (g)</f:facet>
+               #{searchc.carbohydrate}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Sugars (g)</f:facet>
+               #{searchc.sugars}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Fat (g)</f:facet>
+               #{searchc.fat}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Water (g)</f:facet>
+               #{searchc.water}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Calories (g)</f:facet>
+               #{searchc.calories}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Saturated (g)</f:facet>
+               #{searchc.saturated}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Monounsaturated (g)</f:facet>
+               #{searchc.monounsat}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Polyunsaturated (g)</f:facet>
+               #{searchc.polyunsat}
+            </h:column>
+            
+         </h:dataTable>
+      </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Edit Meal Plan</title>
+        <h1><b>Edit Meal Plan</b></h1>
+        <h:outputStylesheet library = "css" name = "styles.css" /> 
+    </h:head>
+    <h:body style="background-color:lightsalmon;">
+    
+    <!-- Shows Current MealPlan -->
+    	<h:form>
+    		<p><b>#{searchController.getUser().getMealPlan().getName()}</b></p>
+    		
+    		<h:commandButton value="Remove" action="#{searchController.removeFromMealPlan()}"/>
+    		
+    		<h:commandButton id="cmdInsert" value="Finish Adding" action="#{searchController.FinishMealPlan()}"/>
+
+			<h:dataTable value = "#{searchController.mealPlanItems}" var = "mealplan1"
+         	styleClass="searchTable"
+          	headerClass="searchTableHeader"
+          	rowClasses="searchTableOddRow,searchTableEvenRow">
+          	<h:column>
+          		<f:facet name = "header">Select</f:facet>
+          		<h:selectBooleanCheckbox value="#{searchController.checked2[mealplan1.id]}"/>
+          	</h:column>
+            <h:column>
+               <f:facet name = "header">Name</f:facet>    				    				
+               #{mealplan1.name}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Food Group</f:facet>
+               #{mealplan1.foodGroup}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Protein (g)</f:facet>
+               #{mealplan1.protein}
+            </h:column>
+            
+            <h:column>
+            	<f:facet name = "header">Calcium (g)</f:facet>
+               #{mealplan1.calcium}
+            </h:column>
+ 
+            <h:column>
+               <f:facet name = "header">Sodium (g)</f:facet>
+               #{mealplan1.sodium}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Fiber (g)</f:facet>
+               #{mealplan1.fiber}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Vitamin C (g)</f:facet>
+               #{mealplan1.vitaminC}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Potassium (g)</f:facet>
+               #{mealplan1.potassium}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Carbohydrates (g)</f:facet>
+               #{mealplan1.carbohydrate}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Sugars (g)</f:facet>
+               #{mealplan1.sugars}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Fat (g)</f:facet>
+               #{mealplan1.fat}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Water (g)</f:facet>
+               #{mealplan1.water}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Calories (g)</f:facet>
+               #{mealplan1.calories}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Saturated (g)</f:facet>
+               #{mealplan1.saturated}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Monounsaturated (g)</f:facet>
+               #{mealplan1.monounsat}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Polyunsaturated (g)</f:facet>
+               #{mealplan1.polyunsat}
+            </h:column>
+            
+         </h:dataTable>
+	</h:form>
+	
+        <br/>
+        
+        <!-- Search Bar -->
+        <h:form>
+            <h:outputLabel for="searchName">
+                <h:outputText value="Enter Name of Food" />
+            </h:outputLabel>
+            <h:inputText id="searchName" value="#{searchController.search}"/>
+                
+            <h:commandButton id="cmdInsert" value="Search" action="#{searchController.executeSearch()}"/>
+        </h:form>
+        <br/>
+        <!-- Shows Search Items -->
+		<h:form>
+		 <h:commandButton id="cmdInsert" value="Add to Meal Plan" action="#{searchController.addToMealPlan()}"/>
+         <h:dataTable value = "#{searchController.results}" var = "searchc"
+         	styleClass="searchTable"
+          	headerClass="searchTableHeader"
+          	rowClasses="searchTableOddRow,searchTableEvenRow">
+          	<h:column>
+          		<f:facet name = "header">Select</f:facet>
+          		<h:selectBooleanCheckbox value="#{searchController.checked[searchc.id]}"/>
+          	</h:column>
+            <h:column>
+               <f:facet name = "header">Name</f:facet>    				    				
+               #{searchc.name}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Food Group</f:facet>
+               #{searchc.foodGroup}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Protein (g)</f:facet>
+               #{searchc.protein}
+            </h:column>
+            
+            <h:column>
+            	<f:facet name = "header">Calcium (g)</f:facet>
+               #{searchc.calcium}
+            </h:column>
+ 
+            <h:column>
+               <f:facet name = "header">Sodium (g)</f:facet>
+               #{searchc.sodium}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Fiber (g)</f:facet>
+               #{searchc.fiber}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Vitamin C (g)</f:facet>
+               #{searchc.vitaminC}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Potassium (g)</f:facet>
+               #{searchc.potassium}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Carbohydrates (g)</f:facet>
+               #{searchc.carbohydrate}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Sugars (g)</f:facet>
+               #{searchc.sugars}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Fat (g)</f:facet>
+               #{searchc.fat}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Water (g)</f:facet>
+               #{searchc.water}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Calories (g)</f:facet>
+               #{searchc.calories}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Saturated (g)</f:facet>
+               #{searchc.saturated}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Monounsaturated (g)</f:facet>
+               #{searchc.monounsat}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Polyunsaturated (g)</f:facet>
+               #{searchc.polyunsat}
+            </h:column>
+            
+         </h:dataTable>
+      </h:form>
+    </h:body>
+</html>
+

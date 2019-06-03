@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Health and Nutrition Application</title>
+        <h1><b>Login Page</b></h1>
+    </h:head>
+    <h:body style="background-color:lightsalmon;">
+        <h:form>
+			<h3>Login to Health and Nutrition Application</h3>
+			<h:outputLabel for="username">
+                <h:outputText value="Enter Username" />
+            </h:outputLabel>
+            <h:inputText id="username" value="#{searchController.unm}"/>
+			
+			<br/>
+			
+			<h:outputLabel for="password">
+                <h:outputText value="Enter Password" />
+            </h:outputLabel>
+            <h:inputSecret id="password" value="#{searchController.pwd}"/>
+		
+			<br/>
+		
+		<h:commandButton id="cmdInsert" action="#{searchController.validateUsernamePassword}" value="Login"></h:commandButton>
+	</h:form>
+		
+	<h:form>
+		<p>Don't have an account? Create user:</p>
+		<h:outputLabel for="username">
+                <h:outputText value="Enter Username" />
+            </h:outputLabel>
+            <h:inputText id="username" value="#{searchController.unm}"/>
+			
+			<br/>
+			
+			<h:outputLabel for="password">
+                <h:outputText value="Enter Password" />
+            </h:outputLabel>
+            <h:inputSecret id="password" value="#{searchController.pwd}"/>
+		
+			<br/>
+			
+			<h:outputLabel for="password2">
+                <h:outputText value="Re-Enter Password" />
+            </h:outputLabel>
+            <h:inputSecret id="password2" value="#{searchController.pwd}"/>
+            
+            <br/>
+		
+		<h:commandButton id="cmdInsert" action="#{searchController.createUser}" value="Create New User"></h:commandButton>
+	</h:form>
+    </h:body>
+</html>

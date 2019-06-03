@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Health and Nutrition Application</title>
+        <h1><b>Welcome to the Health and Nutrition Application</b></h1>
+    </h:head>
+    <h:body style="background-color:lightsalmon;">
+    <a href = "userPage.xhtml">Home</a>
+        <h:form>
+            <h:outputLabel for="searchName">
+                <h:outputText value="Enter Name of Food" />
+            </h:outputLabel>
+            <h:inputText id="searchName" value="#{searchController.search}"/>
+                
+            <h:commandButton id="cmdInsert" value="Search" action="#{searchController.executeSearch()}"/>
+        </h:form>
+        
+        <p></p>
+        
+    </h:body>
+</html>

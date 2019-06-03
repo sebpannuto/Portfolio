@@ -1,0 +1,21 @@
+.searchTable {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.searchTableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #B5B5B5;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+
+.searchTableOddRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFFF;	
+}
+
+.searchTableEvenRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFFF;
+}

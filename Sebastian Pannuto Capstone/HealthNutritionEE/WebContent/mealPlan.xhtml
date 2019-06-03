@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Health and Nutrition Application</title>
+        <h1><b>Your're Meal Plans</b></h1>
+    </h:head>
+    <h:body style="background-color:lightsalmon;">
+    <a href = "userPage.xhtml">Home</a>
+    	<br/>
+    	<p><b>#{searchController.getUser().getMealPlan().getName()}</b></p>
+        <h:form>
+        	<h:commandButton value="Add/Remove" action="#{searchController.editMealPlan()}"/>
+        	<h:commandButton value="Delete Meal Plan" action="#{searchController.deleteMealPlan()}"/>
+			<h:dataTable value = "#{searchController.getUser().getMealPlan().getFoodList()}" var = "mealplan1"
+         	styleClass="searchTable"
+          	headerClass="searchTableHeader"
+          	rowClasses="searchTableOddRow,searchTableEvenRow">
+
+            <h:column>
+               <f:facet name = "header">Name</f:facet>    				    				
+               #{mealplan1.name}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Food Group</f:facet>
+               #{mealplan1.foodGroup}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Protein (g)</f:facet>
+               #{mealplan1.protein}
+            </h:column>
+            
+            <h:column>
+            	<f:facet name = "header">Calcium (g)</f:facet>
+               #{mealplan1.calcium}
+            </h:column>
+ 
+            <h:column>
+               <f:facet name = "header">Sodium (g)</f:facet>
+               #{mealplan1.sodium}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Fiber (g)</f:facet>
+               #{mealplan1.fiber}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Vitamin C (g)</f:facet>
+               #{mealplan1.vitaminC}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Potassium (g)</f:facet>
+               #{mealplan1.potassium}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Carbohydrates (g)</f:facet>
+               #{mealplan1.carbohydrate}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Sugars (g)</f:facet>
+               #{mealplan1.sugars}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Fat (g)</f:facet>
+               #{mealplan1.fat}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Water (g)</f:facet>
+               #{mealplan1.water}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Calories (g)</f:facet>
+               #{mealplan1.calories}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Saturated (g)</f:facet>
+               #{mealplan1.saturated}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Monounsaturated (g)</f:facet>
+               #{mealplan1.monounsat}
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Polyunsaturated (g)</f:facet>
+               #{mealplan1.polyunsat}
+            </h:column>
+            
+         </h:dataTable>
+        </h:form>
+        <p>Totals:</p>
+        <p>Total Protein(g): <b>#{searchController.getUser().getMealPlan().getTotalProtein()}</b> >  #{searchController.getUser().getGoal().getGoalProtein()}</p>
+        <p>Total Calcium(g): <b>#{searchController.getUser().getMealPlan().getTotalCalcium()}</b> > #{searchController.getUser().getGoal().getGoalCalcium()}</p>
+        <p>Total Sodium(g): <b>#{searchController.getUser().getMealPlan().getTotalSodium()}</b> > #{searchController.getUser().getGoal().getGoalSodium()}</p>
+        <p>Total Fiber(g): <b>#{searchController.getUser().getMealPlan().getTotalFiber()}</b> > #{searchController.getUser().getGoal().getGoalFiber()}</p>
+        <p>Total Vitamin C(g): <b>#{searchController.getUser().getMealPlan().getTotalVitaminC()}</b> > #{searchController.getUser().getGoal().getGoalVitaminc()}</p> 
+        <p>Total Potassium(g): <b>#{searchController.getUser().getMealPlan().getTotalPotassium()}</b> > #{searchController.getUser().getGoal().getGoalPotassium()}</p>
+        <p>Total Carbohydrates(g): <b>#{searchController.getUser().getMealPlan().getTotalCarbohydrates()}</b> > #{searchController.getUser().getGoal().getGoalCarbs()}</p>
+        <p>Total Sugars(g): <b>#{searchController.getUser().getMealPlan().getTotalSugars()}</b> > #{searchController.getUser().getGoal().getGoalSugars()}</p>
+        <p>Total Fat(g): <b>#{searchController.getUser().getMealPlan().getTotalFat()} </b> > #{searchController.getUser().getGoal().getGoalFat()}</p>
+        <p>Total Water(g): <b>#{searchController.getUser().getMealPlan().getTotalWater()} </b> > #{searchController.getUser().getGoal().getGoalWater()}</p>
+        <p>Total Calories: <b>#{searchController.getUser().getMealPlan().getTotalCalories()} </b> > #{searchController.getUser().getGoal().getGoalCalories()}</p>
+        <p>Total Saturated Fat(g): <b>#{searchController.getUser().getMealPlan().getTotalSaturated()} </b> > #{searchController.getUser().getGoal().getGoalSaturated()}</p>
+        <p>Total Monounsaturated Fat(g): <b>#{searchController.getUser().getMealPlan().getTotalMonounsat()} </b> > #{searchController.getUser().getGoal().getGoalMono()}</p>
+        <p>Total Polyunsaturated Fat(g): <b>#{searchController.getUser().getMealPlan().getTotalPolyunsat()}</b> > #{searchController.getUser().getGoal().getGoalPoly()}</p>
+        
+        <p>-------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        
+        
+        
+    </h:body>
+</html>
