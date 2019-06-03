@@ -13,4 +13,7 @@ The application can be accessed here: healthnutritionee.us-east-1.elasticbeansta
 In this folder is an interactive fiction engine I wrote in python. The program uses pulls parameters from an SQLite3 database file and then is able to build the game around those parameters. 
 
 **Dungeon Crawler Game**
+
 This was a coding assignment that was worked on in a group of 5. Our goal was to build a dungeon crawler style game for a class. I was responisble for world generation and making sure the world was generated properly. The world generation works by reading parameters in from a Lua file which then randomly generates a world for use in the game.
+
+Unfortunately the file is way too big to upload directly on github. So the zip file is uploaded instead.
